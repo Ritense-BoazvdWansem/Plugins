@@ -6,8 +6,9 @@ This plugin integrates the NotifyNL service into Valtimo, allowing users to send
 
 This plugin has two actions:
 
-1. Send email: Send an email via NotifyNL
+1. Send Email: Send an email via NotifyNL
 2. Send SMS: Send an SMS via NotifyNL
+3. Send Letter: Send a physical letter so someone's address. 
 
 ---
 
@@ -42,7 +43,7 @@ Go to [notifynl website](https://admin.notifynl.nl/) and create an account and l
 For example if your token is: apikey-11a22da9-ece8-4b8e-a7de-c80f16be3ccf-a7613925-c526-485d-9a25-1b23ef8d85b9
     - Token Name: apikey
     - Service: 11a22da9-ece8-4b8e-a7de-c80f16be3ccf
-    - Key: c80f16be3ccf-a7613925-c526-485d-9a25-1b23ef8d85b9
+    - Secret Key: c80f16be3ccf-a7613925-c526-485d-9a25-1b23ef8d85b9
 4. Click **"Save"** to store your configuration.
 
 ---

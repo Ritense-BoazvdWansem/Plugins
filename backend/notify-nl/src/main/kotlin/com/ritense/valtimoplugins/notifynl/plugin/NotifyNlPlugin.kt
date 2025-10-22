@@ -135,7 +135,6 @@ open class NotifyNlPlugin(
         val token = tokenGenerationService.generateToken(serviceId, secretKey)
         val templateResponse = notifyNlClient.getTemplate(url, templateRequest, token)
         val formattedResponse = templateResponse.formattedResponse(templateRequest)
-        println(templateResponse.toString())
         execution.setVariable("result", StringWrapper(formattedResponse))
     }
 
@@ -153,7 +152,6 @@ open class NotifyNlPlugin(
         val token = tokenGenerationService.generateToken(serviceId, secretKey)
         val allTemplatesResponse = notifyNlClient.getAllTemplates(url, token, templateType)
         val formattedResponse = allTemplatesResponse.formattedResponse(allTemplatesRequest)
-        println(allTemplatesResponse.toString())
         execution.setVariable("result", StringWrapper(formattedResponse))
     }
 

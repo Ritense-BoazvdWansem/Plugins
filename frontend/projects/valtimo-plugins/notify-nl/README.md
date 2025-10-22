@@ -8,6 +8,7 @@ This plugin has two actions:
 
 1. Send email: Send an email via NotifyNL
 2. Send SMS: Send an SMS via NotifyNL
+3. Send Letter: Send a physical letter to someone's address
 
 ---
 
