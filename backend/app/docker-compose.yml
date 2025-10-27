@@ -43,7 +43,7 @@ services:
       - POSTGRES_USER=${DB_USER:-keycloak}
       - POSTGRES_PASSWORD=${DB_PASSWORD:-keycloak}
 
-  #zgw
+#zgw
   openzaak:
     image: openzaak/open-zaak:1.12.4
     container_name: valtimo-plugins-local-openzaak
