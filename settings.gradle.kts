@@ -12,6 +12,7 @@ include(
     "backend:object-management",
     "backend:publictask",
     "backend:rotterdam-oracle-ebs",
+    "backend:rss-reader",
     "backend:sample-plugin",
     "backend:slack",
     "backend:smtpmail",

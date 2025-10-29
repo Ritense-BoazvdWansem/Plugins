@@ -515,6 +515,47 @@
         }
       }
     },
+    "@valtimo-plugins/rss-reader": {
+      "projectType": "library",
+      "root": "projects/valtimo-plugins/rss-reader",
+      "sourceRoot": "projects/valtimo-plugins/rss-reader/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/valtimo-plugins/rss-reader/tsconfig.lib.json",
+            "project": "projects/valtimo-plugins/rss-reader/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/valtimo-plugins/rss-reader/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/valtimo-plugins/rss-reader/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/valtimo-plugins/rss-reader/src/test.ts",
+            "tsConfig": "projects/valtimo-plugins/rss-reader/tsconfig.spec.json",
+            "karmaConfig": "projects/valtimo-plugins/rss-reader/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/valtimo-plugins/rss-reader/src/**/*.ts",
+              "projects/valtimo-plugins/rss-reader/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "@valtimo-plugins/sample-plugin": {
       "projectType": "library",
       "root": "projects/valtimo-plugins/sample-plugin",
