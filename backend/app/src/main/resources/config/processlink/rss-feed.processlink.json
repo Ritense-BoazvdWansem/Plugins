@@ -1,0 +1,23 @@
+[
+  {
+    "activityId": "StartEvent_1",
+    "activityType": "bpmn:StartEvent:start",
+    "formDefinitionName": "rss-feed.start",
+    "viewModelEnabled": false,
+    "formDisplayType": "modal",
+    "formSize": "medium",
+    "subtitles": null,
+    "processLinkType": "form"
+  },
+  {
+    "activityId": "SendRequest",
+    "activityType": "bpmn:ServiceTask:start",
+    "pluginConfigurationId": "88f47d51-b976-4365-ad9c-0c45582b94a7",
+    "pluginActionDefinitionKey": "read-rss-feed",
+    "actionProperties": {
+      "summary": "doc:/summary",
+      "url": "doc:/url"
+    },
+    "processLinkType": "plugin"
+  }
+]

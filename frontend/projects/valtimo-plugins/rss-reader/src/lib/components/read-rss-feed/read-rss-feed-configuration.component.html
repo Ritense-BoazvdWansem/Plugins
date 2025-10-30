@@ -21,16 +21,4 @@
     prefill: prefillConfiguration$ ? (prefillConfiguration$ | async) : null
   } as obs"
 >
-    <v-input
-            name="url"
-            [title]="'url' | pluginTranslate: pluginId | async"
-            [fullWidth]="true"
-            [margin]="true"
-            [disabled]="obs.disabled"
-            [defaultValue]="obs.prefill?.url"
-            [required]="true"
-            [tooltip]="'urlTooltip' | pluginTranslate: pluginId | async"
-            placeholder="https://rss.feed.com/"
-    >
-    </v-input>
 </v-form>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 Ritense BV, the Netherlands.
+ * Copyright 2015-2025 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.ritense.valtimoplugins.rssreader.client
 
 import com.ritense.valtimoplugins.rssreader.domain.RssReaderResponse
 import org.springframework.http.MediaType
+import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter
 import org.springframework.web.client.RestClient
 import org.springframework.web.client.body
 import java.net.URI
@@ -26,23 +27,17 @@ class RssReaderClient(
     private val restClientBuilder: RestClient.Builder
 ) {
     fun readRss(baseUri: URI): RssReaderResponse {
-        return restClientBuilder
+        val xml = restClientBuilder
             .clone()
+            .messageConverters { converters ->
+                converters.add(MappingJackson2XmlHttpMessageConverter())
+            }
             .build()
-            .post()
-            .uri {
-                it.scheme(baseUri.scheme)
-                    .host(baseUri.host)
-                    .path(baseUri.path)
-                    .path("/v2/notifications/sms")
-                    .port(baseUri.port)
-                    .build()
-            }
-            .headers {
-                it.contentType = MediaType.APPLICATION_JSON
-            }
-            .accept(MediaType.APPLICATION_JSON)
+            .get()
+            .uri(baseUri)
+            .accept(MediaType.APPLICATION_RSS_XML)
             .retrieve()
             .body<RssReaderResponse>()!!
+        return xml
     }
 }

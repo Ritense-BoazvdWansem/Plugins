@@ -32,6 +32,7 @@ dependencies {
     implementation("com.ritense.valtimo:value-resolver")
 
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
+    implementation("tools.jackson.dataformat:jackson-dataformat-xml:3.0.1")
 }
 
 apply(from = "gradle/publishing.gradle")

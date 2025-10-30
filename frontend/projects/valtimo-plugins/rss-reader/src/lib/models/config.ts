@@ -20,7 +20,6 @@ interface RssReaderConfig extends PluginConfigurationData {
 }
 
 interface ReadRssFeedConfig {
-  url: string;
 }
 
 export {RssReaderConfig, ReadRssFeedConfig};

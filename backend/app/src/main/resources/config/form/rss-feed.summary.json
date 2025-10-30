@@ -1,0 +1,31 @@
+{
+  "display": "form",
+  "components": [
+    {
+      "key": "summary",
+      "type": "hidden",
+      "input": true,
+      "label": "summary",
+      "tableView": false,
+      "properties": {
+        "sourceKey": "doc:summary"
+      }
+    },
+    {
+      "key": "html",
+      "tag": "div",
+      "type": "htmlelement",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "input": false,
+      "label": "HTML",
+      "content": "<section> <h3>RSS Feed Plugin</h3> </section>",
+      "tableView": false,
+      "refreshOnChange": false
+    }
+  ]
+}

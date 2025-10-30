@@ -60,7 +60,7 @@ export class RssReaderConfigurationComponent
   }
 
   private handleValid(formValue: RssReaderConfig): void {
-    const valid = !!(formValue.configurationTitle && formValue.url);
+    const valid = !!(formValue.configurationTitle);
 
     this.valid$.next(valid);
     this.valid.emit(valid);

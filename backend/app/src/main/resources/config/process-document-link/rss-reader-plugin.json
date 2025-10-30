@@ -1,0 +1,7 @@
+[
+  {
+    "processDefinitionKey": "rss-feed",
+    "canInitializeDocument": true,
+    "startableByUser": false
+  }
+]

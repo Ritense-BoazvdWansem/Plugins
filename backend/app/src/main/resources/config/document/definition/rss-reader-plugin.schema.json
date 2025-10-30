@@ -1,0 +1,15 @@
+{
+  "$id": "rss-reader.schema",
+  "type": "object",
+  "title": "RSS Reader Plugin",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "summary": {
+      "type": "object"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

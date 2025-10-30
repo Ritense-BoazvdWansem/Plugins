@@ -141,6 +141,10 @@ import {ValueMapperPluginModule} from "../../projects/valtimo-plugins/value-mapp
 import {
     valueMapperPluginSpecification
 } from "../../projects/valtimo-plugins/value-mapper/src/lib/value-mapper-plugin.specification";
+import {RssReaderPluginModule} from "../../projects/valtimo-plugins/rss-reader/src/lib/rss-reader-plugin-module";
+import {
+    rssReaderPluginSpecification
+} from "../../projects/valtimo-plugins/rss-reader/src/lib/rss-reader-plugin.specification";
 
 export function tabsFactory() {
     return new Map<string, object>([
@@ -231,6 +235,7 @@ export function tabsFactory() {
         TaskManagementModule,
         ExterneKlanttaakPluginModule,
         RotterdamOracleEbsPluginModule,
+        RssReaderPluginModule,
         DashboardModule,
         DashboardManagementModule,
         KvkPluginModule,
@@ -255,6 +260,7 @@ export function tabsFactory() {
             objecttypenApiPluginSpecification,
             publictaskPluginSpecification,
             rotterdamOracleEbsPluginSpecification,
+            rssReaderPluginSpecification,
             samplePluginSpecification,
             slackPluginSpecification,
             valtimoLlmPluginSpecification,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 Ritense BV, the Netherlands.
+ * Copyright 2015-2025 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,13 @@
 
 package com.ritense.valtimoplugins.rssreader.plugin
 
+import com.fasterxml.jackson.module.kotlin.convertValue
 import com.ritense.plugin.annotation.Plugin
 import com.ritense.plugin.annotation.PluginAction
 import com.ritense.plugin.annotation.PluginActionProperty
 import com.ritense.processlink.domain.ActivityTypeWithEventName
 import com.ritense.valtimoplugins.rssreader.client.RssReaderClient
+import com.ritense.valtimoplugins.rssreader.domain.RssUpdateListener
 import org.camunda.bpm.engine.delegate.DelegateExecution
 import java.net.URI
 
@@ -42,6 +44,7 @@ open class RssReaderPlugin(
         execution: DelegateExecution,
         @PluginActionProperty url: URI,
     ) {
-        rssReaderClient.readRss(url)
+        val rssResponse = rssReaderClient.readRss(url)
+        execution.setVariable("summary", mapOf("title" to rssResponse.channel.title))
     }
 }

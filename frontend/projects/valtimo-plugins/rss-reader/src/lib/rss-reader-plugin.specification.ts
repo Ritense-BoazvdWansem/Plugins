@@ -24,44 +24,28 @@ const rssReaderPluginSpecification: PluginSpecification = {
   pluginConfigurationComponent: RssReaderConfigurationComponent,
   pluginLogoBase64: RSS_READER_PLUGIN_LOGO_BASE64,
   functionConfigurationComponents: {
-    'send-sms': ReadRssFeedConfigurationComponent
+    'read-rss-feed': ReadRssFeedConfigurationComponent
   },
   pluginTranslations: {
     nl: {
       title: 'RSS Reader',
-      'send-sms': 'Stuur SMS',
+      'read-rss-feed': 'Voeg een RSS feed toe',
       url: 'RSS Feed URL',
       urlTooltip: 'Een URL naar de RSS feed.',
       description: 'Lees RSS van een feed.',
       configurationTitle: 'Configuratienaam',
       configurationTitleTooltip:
         'De naam van de huidige plugin-configuratie. Onder deze naam kan de configuratie in de rest van de applicatie teruggevonden worden.',
-      phoneNumber: 'Telefoonnummer',
-      phoneNumberTooltip: 'Het telefoonnummer van de ontvanger',
-      serviceId: 'Service ID',
-      serviceIdTooltip: 'De unieke identifier van de Service in NotifyNL',
-      secretKey: 'Secret key',
-      secretKeyTooltip: 'De API secret key van NotifyNL',
-      templateId: 'Template ID',
-      templateIdTooltip: 'De unieke identifier van de template die gebruikt wordt voor dit bericht'
     },
     en: {
       title: 'RSS Reader',
-      'send-sms': 'Send SMS',
+      'read-rss-feed': 'Add a RSS feed',
       url: 'RSS Feed URL',
-      urlTooltip: 'The URL of the NotifyNL REST API.',
+      urlTooltip: 'The URL of the RSS Feed.',
       description: 'Send SMS and E-mail with the NotifyNL service.',
       configurationTitle: 'Configuration name',
       configurationTitleTooltip:
           'The name of the current plugin configuration. Under this name, the configuration can be found in the rest of the application.',
-      phoneNumber: 'Phone number',
-      phoneNumberTooltip: 'The mobile number of the recipient.',
-      serviceId: 'Service ID',
-      serviceIdTooltip: 'The unique ID of the Service in NotifyNL',
-      secretKey: 'Secret key',
-      secretKeyTooltip: 'The secret key of the NotifyNL API',
-      templateId: 'Template ID',
-      templateIdTooltip: 'The unique ID of the template that will be used for this message'
     }
   },
 };

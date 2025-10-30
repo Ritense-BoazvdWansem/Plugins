@@ -1,0 +1,27 @@
+{
+  "display": "form",
+  "components": [
+    {
+      "key": "url",
+      "type": "textfield",
+      "input": true,
+      "label": "URL",
+      "tableView": true,
+      "properties": {
+        "targetKey": "doc:/url"
+      },
+      "applyMaskOn": "change",
+      "attributes": {
+        "data-testid": "rss-feed.start-url"
+      }
+    },
+    {
+      "key": "submit",
+      "type": "button",
+      "input": true,
+      "label": "Submit",
+      "tableView": false,
+      "disableOnInvalid": true
+    }
+  ]
+}

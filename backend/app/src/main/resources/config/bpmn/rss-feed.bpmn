@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="Camunda Modeler" exporterVersion="5.38.1" expressionLanguage="http://www.w3.org/1999/XPath" id="Definitions_1jxgiqe" targetNamespace="http://bpmn.io/schema/bpmn" typeLanguage="http://www.w3.org/2001/XMLSchema">
+      
+  
+  <bpmn:process id="rss-feed" isClosed="false" isExecutable="true" name="RSS Feed" processType="None">
+            
+    
+    <bpmn:startEvent id="StartEvent_1" isInterrupting="true" parallelMultiple="false">
+                  
+      
+      <bpmn:outgoing>Flow_1y0vehx</bpmn:outgoing>
+                
+    
+    </bpmn:startEvent>
+            
+    
+    <bpmn:sequenceFlow id="Flow_1y0vehx" sourceRef="StartEvent_1" targetRef="SendRequest"/>
+            
+    
+    <bpmn:serviceTask camunda:expression="${true}" completionQuantity="1" id="SendRequest" implementation="##WebService" isForCompensation="false" name="Send Request" startQuantity="1">
+
+      
+      <bpmn:incoming>Flow_1y0vehx</bpmn:incoming>
+                  
+      
+      <bpmn:outgoing>Flow_157nkxs</bpmn:outgoing>
+                
+    
+    </bpmn:serviceTask>
+            
+    
+    <bpmn:sequenceFlow id="Flow_157nkxs" sourceRef="SendRequest" targetRef="Activity_0rw4rl7"/>
+            
+    
+    <bpmn:endEvent id="Event_09s7t8c">
+                  
+      
+      <bpmn:incoming>Flow_01ys1vy</bpmn:incoming>
+                
+    
+    </bpmn:endEvent>
+            
+    
+    <bpmn:sequenceFlow id="Flow_01ys1vy" sourceRef="Activity_0rw4rl7" targetRef="Event_09s7t8c"/>
+            
+    
+    <bpmn:serviceTask camunda:expression="${valueResolverDelegateService.handleValue(execution, &quot;doc:/summary&quot;, summary)}" completionQuantity="1" id="Activity_0rw4rl7" implementation="##WebService" isForCompensation="false" name="Summary" startQuantity="1">
+                  
+      
+      <bpmn:incoming>Flow_157nkxs</bpmn:incoming>
+                  
+      
+      <bpmn:outgoing>Flow_01ys1vy</bpmn:outgoing>
+                
+    
+    </bpmn:serviceTask>
+          
+  
+  </bpmn:process>
+      
+  
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+            
+    
+    <bpmndi:BPMNPlane bpmnElement="rss-feed" id="BPMNPlane_1">
+                  
+      
+      <bpmndi:BPMNShape bpmnElement="StartEvent_1" id="_BPMNShape_StartEvent_2">
+                        
+        
+        <dc:Bounds height="36" width="36" x="179" y="99"/>
+                      
+      
+      </bpmndi:BPMNShape>
+                  
+      
+      <bpmndi:BPMNShape bpmnElement="SendRequest" id="Activity_0kp4xz1_di">
+                        
+        
+        <dc:Bounds height="80" width="100" x="270" y="77"/>
+                        
+        
+        <bpmndi:BPMNLabel/>
+                      
+      
+      </bpmndi:BPMNShape>
+                  
+      
+      <bpmndi:BPMNShape bpmnElement="Event_09s7t8c" id="Event_09s7t8c_di">
+                        
+        
+        <dc:Bounds height="36" width="36" x="612" y="99"/>
+                      
+      
+      </bpmndi:BPMNShape>
+                  
+      
+      <bpmndi:BPMNShape bpmnElement="Activity_0rw4rl7" id="Activity_1v3s6q5_di">
+                        
+        
+        <dc:Bounds height="80" width="100" x="440" y="77"/>
+                      
+      
+      </bpmndi:BPMNShape>
+                  
+      
+      <bpmndi:BPMNEdge bpmnElement="Flow_1y0vehx" id="Flow_1y0vehx_di">
+                        
+        
+        <di:waypoint x="215" y="117"/>
+                        
+        
+        <di:waypoint x="270" y="117"/>
+                      
+      
+      </bpmndi:BPMNEdge>
+                  
+      
+      <bpmndi:BPMNEdge bpmnElement="Flow_157nkxs" id="Flow_157nkxs_di">
+                        
+        
+        <di:waypoint x="370" y="117"/>
+                        
+        
+        <di:waypoint x="440" y="117"/>
+                      
+      
+      </bpmndi:BPMNEdge>
+                  
+      
+      <bpmndi:BPMNEdge bpmnElement="Flow_01ys1vy" id="Flow_01ys1vy_di">
+                        
+        
+        <di:waypoint x="540" y="117"/>
+                        
+        
+        <di:waypoint x="612" y="117"/>
+                      
+      
+      </bpmndi:BPMNEdge>
+                
+    
+    </bpmndi:BPMNPlane>
+          
+  
+  </bpmndi:BPMNDiagram>
+    
+
+</bpmn:definitions>

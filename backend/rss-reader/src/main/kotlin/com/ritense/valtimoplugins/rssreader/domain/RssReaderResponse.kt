@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 Ritense BV, the Netherlands.
+ * Copyright 2015-2025 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,5 +16,41 @@
 
 package com.ritense.valtimoplugins.rssreader.domain
 
-class RssReaderResponse {
+import tools.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
+import tools.jackson.dataformat.xml.annotation.JacksonXmlProperty
+import tools.jackson.dataformat.xml.annotation.JacksonXmlRootElement
+
+@JacksonXmlRootElement(localName = "rss")
+data class RssReaderResponse(
+    @JacksonXmlProperty(localName = "channel")
+    val channel: Channel
+) {
+    data class Channel(
+        @JacksonXmlProperty(localName = "title")
+        val title: String? = null,
+
+        @JacksonXmlProperty(localName = "link")
+        val link: String? = null,
+
+        @JacksonXmlProperty(localName = "description")
+        val description: String? = null,
+
+        @JacksonXmlElementWrapper(useWrapping = false)
+        @JacksonXmlProperty(localName = "item")
+        val items: List<Item>? = emptyList()
+    )
+
+    data class Item(
+        @JacksonXmlProperty(localName = "title")
+        val title: String? = null,
+
+        @JacksonXmlProperty(localName = "link")
+        val link: String? = null,
+
+        @JacksonXmlProperty(localName = "pubDate")
+        val pubDate: String? = null,
+
+        @JacksonXmlProperty(localName = "description")
+        val description: String? = null
+    )
 }
