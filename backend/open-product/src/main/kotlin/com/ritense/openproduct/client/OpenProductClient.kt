@@ -35,7 +35,7 @@ class OpenProductClient() {
         val restClient = getRestclient(baseUrl, authenticationPlugin)
 
         val response = restClient.get()
-            .uri(URL_PATH)
+            .uri("/producten/api/v1/producten")
             .retrieve()
             .toEntity(PaginatedProductList::class.java)
 
@@ -55,7 +55,7 @@ class OpenProductClient() {
         val requestJson = objectMapper.writeValueAsString(request)
 
         val response = restClient.post()
-            .uri(URL_PATH)
+            .uri("/producten/api/v1/producten")
             .contentType(MediaType.APPLICATION_JSON)
             .body(requestJson)
             .retrieve()
