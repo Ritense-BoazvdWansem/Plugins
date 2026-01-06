@@ -273,7 +273,7 @@ export function tabsFactory() {
         ValueMapperPluginModule,
         DocsysPluginModule,
         TokenAuthenticationPluginModule,
-        OpenProductPluginModule
+        OpenProductPluginModule,
         OpenKlantPluginModule,
         SocratesPluginModule,
     ],
